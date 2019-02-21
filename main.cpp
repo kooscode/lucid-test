@@ -35,9 +35,9 @@ int main()
 
         //get ptr to pixel format node item
         GenICam::gcstring current_format = Arena::GetNodeValue<GenICam::gcstring>(pDevice->GetNodeMap(), "PixelFormat");
-        std::cout << "\tCurrent PixelFormat is " << current_format.c_str() << std::endl;
+        std::cout << "PixelFormat is " << current_format.c_str() << std::endl;
 
-        std::cout << "\tSetting PixelFormat mode to " << pixel_format << std::endl;
+        std::cout << "Setting PixelFormat mode to " << pixel_format << std::endl;
 
         //set format
         Arena::SetNodeValue<GenICam::gcstring>(pDevice->GetNodeMap(), "PixelFormat", pixel_format.c_str()); 
@@ -45,7 +45,7 @@ int main()
         //set buffer mode newest only.
         Arena::SetNodeValue<GenICam::gcstring>(pDevice->GetTLStreamNodeMap(), "StreamBufferHandlingMode", "NewestOnly");
 
-        std::cout << "\tStart stream" << std::endl;
+        std::cout << "Starting stream" << std::endl;
         pDevice->StartStream();
 
         //Create OpenCV Window
