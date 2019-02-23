@@ -5,7 +5,13 @@
                    displayName="Header Files"
                    projectFiles="true">
     </logicalFolder>
-    <logicalFolder name="f1" displayName="libtc" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f1" displayName="libtc" projectFiles="true">
+      <itemPath>../libterraclear/src/camera_base.cpp</itemPath>
+      <itemPath>../libterraclear/src/camera_base.hpp</itemPath>
+      <itemPath>../libterraclear/src/camera_lucid_triton.cpp</itemPath>
+      <itemPath>../libterraclear/src/camera_lucid_triton.hpp</itemPath>
+      <itemPath>../libterraclear/src/error_base.cpp</itemPath>
+      <itemPath>../libterraclear/src/error_base.hpp</itemPath>
       <itemPath>../libterraclear/src/stopwatch.cpp</itemPath>
       <itemPath>../libterraclear/src/stopwatch.hpp</itemPath>
     </logicalFolder>
@@ -13,9 +19,7 @@
                    displayName="Resource Files"
                    projectFiles="true">
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
+    <logicalFolder name="SourceFiles" displayName="src" projectFiles="true">
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -47,23 +51,54 @@
             <pElem>/data/software/ArenaSDK_Linux_x64/include/Arena</pElem>
             <pElem>/data/software/ArenaSDK_Linux_x64/GenICam/library/CPP/include</pElem>
           </incDir>
+          <commandLine>-DTC_USE_TRITON</commandLine>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>/data/software/ArenaSDK_Linux_x64/GenICam/library/lib/Linux64_x64</pElem>
-            <pElem>/data/software/ArenaSDK_Linux_x64/ffmpeg</pElem>
             <pElem>/data/software/ArenaSDK_Linux_x64/lib64</pElem>
+            <pElem>/data/software/ArenaSDK_Linux_x64/ffmpeg</pElem>
+            <pElem>/data/software/ArenaSDK_Linux_x64/GenICam/library/lib/Linux64_x64</pElem>
           </linkerAddLib>
           <commandlineTool>g++</commandlineTool>
           <linkerLibItems>
             <linkerOptionItem>`pkg-config --libs opencv`</linkerOptionItem>
             <linkerLibLibItem>arena</linkerLibLibItem>
             <linkerLibLibItem>gentl</linkerLibLibItem>
-            <linkerLibLibItem>GenApi_gcc421_v3_0</linkerLibLibItem>
             <linkerLibLibItem>GCBase_gcc421_v3_0</linkerLibLibItem>
+            <linkerLibLibItem>GenApi_gcc421_v3_0</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="../libterraclear/src/camera_base.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/camera_base.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/camera_lucid_triton.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/camera_lucid_triton.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/error_base.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/error_base.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="../libterraclear/src/stopwatch.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../libterraclear/src/stopwatch.hpp" ex="false" tool="3" flavor2="0">
@@ -91,6 +126,36 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="../libterraclear/src/camera_base.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/camera_base.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/camera_lucid_triton.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/camera_lucid_triton.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/error_base.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../libterraclear/src/error_base.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="../libterraclear/src/stopwatch.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../libterraclear/src/stopwatch.hpp" ex="false" tool="3" flavor2="0">

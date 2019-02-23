@@ -35,6 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/e1dda48/camera_base.o \
+	${OBJECTDIR}/_ext/e1dda48/camera_lucid_triton.o \
+	${OBJECTDIR}/_ext/e1dda48/error_base.o \
 	${OBJECTDIR}/_ext/e1dda48/stopwatch.o \
 	${OBJECTDIR}/main.o
 
@@ -43,8 +46,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-DTC_USE_TRITON
+CXXFLAGS=-DTC_USE_TRITON
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -53,7 +56,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/data/software/ArenaSDK_Linux_x64/GenICam/library/lib/Linux64_x64 -L/data/software/ArenaSDK_Linux_x64/ffmpeg -L/data/software/ArenaSDK_Linux_x64/lib64 `pkg-config --libs opencv` -larena -lgentl -lGenApi_gcc421_v3_0 -lGCBase_gcc421_v3_0  
+LDLIBSOPTIONS=-L/data/software/ArenaSDK_Linux_x64/lib64 -L/data/software/ArenaSDK_Linux_x64/ffmpeg -L/data/software/ArenaSDK_Linux_x64/GenICam/library/lib/Linux64_x64 `pkg-config --libs opencv` -larena -lgentl -lGCBase_gcc421_v3_0 -lGenApi_gcc421_v3_0  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -62,6 +65,21 @@ LDLIBSOPTIONS=-L/data/software/ArenaSDK_Linux_x64/GenICam/library/lib/Linux64_x6
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lucid-test: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	g++ -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lucid-test ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/_ext/e1dda48/camera_base.o: ../libterraclear/src/camera_base.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/e1dda48
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I.. -I/data/software/ArenaSDK_Linux_x64/include/Arena -I/data/software/ArenaSDK_Linux_x64/GenICam/library/CPP/include `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/e1dda48/camera_base.o ../libterraclear/src/camera_base.cpp
+
+${OBJECTDIR}/_ext/e1dda48/camera_lucid_triton.o: ../libterraclear/src/camera_lucid_triton.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/e1dda48
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I.. -I/data/software/ArenaSDK_Linux_x64/include/Arena -I/data/software/ArenaSDK_Linux_x64/GenICam/library/CPP/include `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/e1dda48/camera_lucid_triton.o ../libterraclear/src/camera_lucid_triton.cpp
+
+${OBJECTDIR}/_ext/e1dda48/error_base.o: ../libterraclear/src/error_base.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/e1dda48
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I.. -I/data/software/ArenaSDK_Linux_x64/include/Arena -I/data/software/ArenaSDK_Linux_x64/GenICam/library/CPP/include `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/e1dda48/error_base.o ../libterraclear/src/error_base.cpp
 
 ${OBJECTDIR}/_ext/e1dda48/stopwatch.o: ../libterraclear/src/stopwatch.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/e1dda48
