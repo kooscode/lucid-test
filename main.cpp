@@ -65,7 +65,7 @@ int main()
         //construct & paint fps and ms delay text.
         std::stringstream fpsstr;
         fpsstr << "fps: " << std::fixed << std::setprecision(0) << cam_fps << ", frame lag:" << avg_ms << "ms";
-        cv::putText(cam_img, fpsstr.str(), cv::Point(10,50), cv::FONT_HERSHEY_PLAIN, 4,  cv::Scalar(0x00, 0x00, 0xff), 4);   
+       // cv::putText(cam_img, fpsstr.str(), cv::Point(10,50), cv::FONT_HERSHEY_PLAIN, 3,  cv::Scalar(0x00, 0x00, 0xff), 4);   
 
         //update onscreen img.
         cv::imshow(window_name, cam_img);
@@ -86,11 +86,11 @@ int main()
              cam_fps = 1000.0f / avg_ms;
              frame_cnt = 0;
              total_ms = 0;
-
-             std::cout << "fps:" << cam_fps << std::endl;
          }
 
     }    
+
+//    std::cout << __FILE__ << ", " << __LINE__ << std::endl;
     
     return 0;
 }
